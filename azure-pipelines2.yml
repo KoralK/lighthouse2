@@ -1,6 +1,14 @@
 trigger:
 - main
 
+schedules:
+- cron: "*/5 * * * *"
+  displayName: Every two minutes
+  branches:
+    include:
+    - main
+  always: true
+
 pool:
   vmImage: 'ubuntu-latest'
 

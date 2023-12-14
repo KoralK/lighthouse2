@@ -84,7 +84,7 @@ scheduler.add_job(fetch_lighthouse_data, 'interval', minutes=1)
 # Start the scheduler
 
 if __name__ == "__main__":
-    for _ in range(2):  # Run it three times
+    for _ in range(2):  # Run it 2 times
         fetch_lighthouse_data()
         time.sleep(120)  # Wait for 2 minutes before the next run
 
