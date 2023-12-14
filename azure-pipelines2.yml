@@ -9,6 +9,7 @@ steps:
   inputs:
     versionSpec: '3.11'
     addToPath: true
+  displayName: 'Set Python Version'
 
 - script: |
     python -m venv venv
@@ -20,8 +21,7 @@ steps:
 - script: |
     source venv/bin/activate
     python app.py
-  displayName: 'Run script'
+  displayName: 'Run app.py script'
   env:
     GOOGLE_API_KEY: $(GOOGLE_API_KEY)
     NEW_RELIC_API_KEY: $(NEW_RELIC_API_KEY)
-  displayName: 'New relic & Lighthouse integration'
