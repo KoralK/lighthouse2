@@ -24,4 +24,4 @@ steps:
   env:
     GOOGLE_API_KEY: $(GOOGLE_API_KEY)
     NEW_RELIC_API_KEY: $(NEW_RELIC_API_KEY)
-  displayName: 'Run script'
+  displayName: 'New relic & Lighthouse integration'
