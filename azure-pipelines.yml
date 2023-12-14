@@ -1,0 +1,27 @@
+trigger:
+- azure-pipelines
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.11'
+    addToPath: true
+
+- script: |
+    python -m venv venv
+    source venv/bin/activate
+    python -m pip install --upgrade pip
+    pip install requests
+  displayName: 'Install dependencies'
+
+- script: |
+    source venv/bin/activate
+    python app.py
+  displayName: 'Run script'
+  env:
+    GOOGLE_API_KEY: $(GOOGLE_API_KEY)
+    NEW_RELIC_API_KEY: $(NEW_RELIC_API_KEY)
+  displayName: 'Run script'
