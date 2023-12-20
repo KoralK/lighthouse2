@@ -3,7 +3,7 @@ trigger:
 
 schedules:
 - cron: "*/5 * * * *"
-  displayName: Every two minutes
+  displayName: Every five minutes
   branches:
     include:
     - main
